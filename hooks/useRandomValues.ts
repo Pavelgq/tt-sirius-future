@@ -3,7 +3,7 @@ import { countItems, itemsValue } from "../constants/settings"
 import { GameValueType, ItemTypes } from "../types/types";
 
 
-export function getRandomItemsValues(type: ItemTypes, count: number) : GameValueType {
+export function getRandomItemsValues(type: ItemTypes, count: number, ) : GameValueType {
   const result = new Set<string | number>();
   if (type === "A") {
     const chars = 'АБВГДЕËЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
@@ -20,11 +20,11 @@ export function getRandomItemsValues(type: ItemTypes, count: number) : GameValue
   return Array.from(result);
 }
 
-export const useRandomValues = (value: ItemTypes, count: number) => {
+export const useRandomValues = (value: ItemTypes, count: number, direction: 'asc' | 'desc') => {
   const [values, setValues] = useState<GameValueType>([]);
+  const [firstValue, setFirstValue] = useState<string | number>('');
 
   const getValues = useCallback(() => {
-    console.log(value, count)
     return getRandomItemsValues(
       value,
       count
@@ -32,14 +32,17 @@ export const useRandomValues = (value: ItemTypes, count: number) => {
   }, [value, count]);
 
   useEffect(() => {
-    console.log('1')
-    setValues(() => {
-      const v = getValues();
-      console.log(v)
-      return v
-    } )
-    console.log(values)
-  }, [getValues]);
+    const temp = getValues() as (string | number)[]
+    setValues(temp);
+    setFirstValue(temp.sort((a, b) => {
+      if ( typeof a === 'number' && typeof b === 'number') {
+        return direction === 'asc' ? (a - b) : (b - a);
+      } else {
+        return direction === 'asc' ? (a > b ? 1 : -1) : (a < b ? 1 : -1);
+      }
+      
+    })[0])
+  }, [direction, getValues]);
 
-  return {values}
+  return {values, firstValue}
 }

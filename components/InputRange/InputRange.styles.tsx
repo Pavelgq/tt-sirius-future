@@ -3,8 +3,8 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { baseTheme } from "../../styles/theme";
 
 const rangeThumb = `
-  width: ${baseTheme.sizes.rangeThumb};
-  height: ${baseTheme.sizes.rangeThumb};;
+  width: ${baseTheme.sizes.rangeThumb}px;
+  height: ${baseTheme.sizes.rangeThumb}px;
   margin: -1px 0;
   border-radius: 50%;
   background-color: ${baseTheme.colors.secondary};
@@ -23,7 +23,6 @@ const rangeTrack = `
 interface RangeProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   width: number;
-  marginBottom?: number;
 }
 
 interface ListProps {
@@ -37,7 +36,6 @@ export const Range = styled.div<RangeProps>`
   position: relative;
   width: ${({ width }) => width}px;
   height: 51px;
-  margin-bottom: ${({ marginBottom = 0 }) => marginBottom}px;
 `;
 
 export const Input = styled.input`

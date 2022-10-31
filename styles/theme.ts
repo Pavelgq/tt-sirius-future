@@ -31,8 +31,8 @@ export const baseTheme:BaseThemeI = {
 
   fonts: {
     calibry: "Calibri",
-    circeAlt:'Circe Rounded Alt',
-    circe: 'Circe Rounded',
+    circeAlt: "Circe Rounded Alt",
+    circe: "Circe Rounded",
     hilvetica: "Helvetica"
   },
 

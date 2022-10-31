@@ -24,7 +24,7 @@ const GlobalStyles = () => (
         font-style: normal;
       }
       @font-face {
-        font-family: "Circe Rounded";
+        font-family: "Circe Rounded Alt";
         src: local("Circe Rounded Alt Regular2"),
           local("Circe-Rounded-Alt-Regular2"),
           url("/fonts/CirceRoundedAlt-Regular2/CirceRoundedAlt-Regular2.woff2")

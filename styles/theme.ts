@@ -6,6 +6,13 @@ interface BaseThemeI {
     circe: string,
     hilvetica: string
   },
+  sizes: {[key: string]: number}
+}
+
+import "@emotion/react";
+
+declare module "@emotion/react" {
+  export interface Theme extends BaseThemeI {}
 }
 
 export const baseTheme:BaseThemeI = {
@@ -36,9 +43,11 @@ export const baseTheme:BaseThemeI = {
   //   small: '(max-width: 540px)',
   // },
 
-  // // in px
-  // sizes: {
-  // },
+  // in px
+  sizes: {
+    rangeThumb: 23,
+
+  },
 
   // // in ms
   // durations: {

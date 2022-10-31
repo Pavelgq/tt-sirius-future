@@ -42,8 +42,7 @@ const presetRepeat = css`
 
   color: ${baseTheme.colors.fontLight};
 
-  width: 263px;
-  height: 68px;
+  padding: 2px 24px;
 
   background-color: ${baseTheme.colors.lightGreen};
 `;
@@ -68,5 +67,5 @@ export const ButtonStyled = styled.button<ButtonStyleProps>`
   border: none;
   cursor: pointer;
 
-  opacity: ${({ isActive }) => (isActive ? 1 : 0.56)};
+  opacity: ${({ isActive = true }) => (isActive ? 1 : 0.56)};
 `;

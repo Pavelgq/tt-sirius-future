@@ -4,7 +4,7 @@ import { ButtonProps } from "./ButtonProps";
 
 export const Button: FC<ButtonProps> = ({
   preset = "main",
-  isActive = false,
+  isActive = true,
   children,
   ...props
 }) => {

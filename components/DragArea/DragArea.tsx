@@ -1,9 +1,7 @@
-import { DragCoin } from "../Coin/DragCoin";
 import { Droppable, Draggable } from "react-beautiful-dnd";
 import { FC } from "react";
 import styled from "@emotion/styled";
-import { coordinates, ScreenParamsI } from "../../constants/game";
-import { css } from "@emotion/css";
+import { ScreenParamsI } from "../../constants/game";
 import { GameItemType } from "../../types/types";
 import { Coin } from "../Coin/Coin";
 

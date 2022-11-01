@@ -9,12 +9,12 @@ import { DropFields } from "../../components/DropFields/DropFields";
 import { Arrow } from "../../components/Arrow/Arrow";
 import { DragArea } from "../../components/DragArea/DragArea";
 import { WinnerModal } from "../../components/WinnerModal/WinnerModal";
+import Head from "next/head";
 
 interface BackgroundContainerProps {
   bg: string;
 }
 const BackgroundContainer = styled.div<BackgroundContainerProps>`
-  /* position: relative; */
   height: 100vh;
   background-image: ${({ bg }) => bg && `url(${bg})`};
   background-repeat: no-repeat;
@@ -67,6 +67,11 @@ const Game = () => {
 
   return (
     <>
+      <Head>
+        <title>Игра</title>
+        <meta name="description" content="Тестовое задание Sirius Future" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <DragDropContext onDragEnd={onDragEnd}>
         <BackgroundContainer bg={screenView.background}>
           <DragArea values={values} screenView={screenView} />

@@ -72,10 +72,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        {/* <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1> */}
-
         <GroupTitle>Кол-во предметов</GroupTitle>
         <InputRange
           className={simpleCss`

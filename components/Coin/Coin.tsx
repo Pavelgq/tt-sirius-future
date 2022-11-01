@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, forwardRef } from "react";
 import { GameValueType } from "../../types/types";
 
 interface CounProps {
@@ -29,11 +29,15 @@ const Container = styled.div`
   }
 `;
 
-export const Coin: FC<CounProps> = ({ path, value }) => {
-  return (
-    <Container>
-      <Image src={path} alt={"Элемент для перемещения"} />
-      <span>{value}</span>
-    </Container>
-  );
-};
+export const Coin = forwardRef<HTMLDivElement, CounProps>(
+  ({ path, value }, ref) => {
+    return (
+      <Container ref={ref}>
+        <Image src={path} alt={"Элемент для перемещения"} />
+        <span>{value}</span>
+      </Container>
+    );
+  }
+);
+
+Coin.displayName = "Coin";

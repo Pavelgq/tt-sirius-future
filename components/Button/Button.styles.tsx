@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { font } from "../../styles/mixins";
 import { baseTheme } from "../../styles/theme";
 import { ButtonProps } from "./ButtonProps";
 

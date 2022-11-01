@@ -8,7 +8,10 @@ import { Button } from "../Button/Button";
 import starIcon from "../../public/images/star.svg";
 
 const Container = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   ${columnContainer};
   align-items: center;
   padding: 23px;
@@ -34,23 +37,23 @@ const DecorateWrapper = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  & img:nth-child(1) {
+  & img:nth-of-type(1) {
     position: absolute;
     top: -90px;
     left: -100px;
     transform: scale(0.65);
   }
-  & img:nth-child(2) {
+  & img:nth-of-type(2) {
     position: absolute;
     bottom: -50px;
     left: -100px;
   }
-  & img:nth-child(3) {
+  & img:nth-of-type(3) {
     position: absolute;
     top: 100px;
     right: -100px;
   }
-  & img:nth-child(4) {
+  & img:nth-of-type(4) {
     position: absolute;
     bottom: -100px;
     right: -120px;

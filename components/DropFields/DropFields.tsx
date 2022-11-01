@@ -46,7 +46,7 @@ export const DropFields = forwardRef<HTMLDivElement, DropFieldsProps>(
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                   >
-                    {item.value && (
+                    {item.value !== "" && (
                       <Coin path={item.coinPath} value={item.value} />
                     )}
                     {provided.placeholder}
